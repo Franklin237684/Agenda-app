@@ -14,99 +14,28 @@
 </head>
 <body>
 
-<header>
-    <h1 id="greeting">Bienvenue</h1>
-</header>
+  <!-- ÉCRAN DE BIENVENUE -->
+  <div id="welcome-screen">
+    <h1>Bienvenue</h1>
+    <p>Choisissez votre langue</p>
 
-<main>
+    <button class="lang-btn" data-lang="fr">Français</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
 
-    <!-- CHOIX DE LA LANGUE -->
-    <section id="language-section" class="active">
-        <h2>Choisissez votre langue</h2>
-        <button onclick="setLanguage('fr')">Français</button>
-        <button onclick="setLanguage('en')">English</button>
-    </section>
+  <!-- ÉCRAN PRINCIPAL -->
+  <div id="app-screen" style="display:none;">
+    <h2 id="greeting"></h2>
 
-    <!-- BIENVENUE / NOM -->
-    <section id="welcome-section">
-        <h2>Bienvenue</h2>
-        <p>Comment t'appelles-tu ?</p>
-        <input type="text" id="usernameInput" placeholder="Votre nom">
-        <button id="saveNameBtn">Entrer</button>
-    </section>
+    <div class="calendar">
+      <p>📅 Calendrier (à venir)</p>
+    </div>
 
-    <!-- CALENDRIER -->
-    <section id="calendar-section">
-        <h2>Calendrier</h2>
+    <div class="activities">
+      <p>📝 Activités (à venir)</p>
+    </div>
+  </div>
 
-        <div class="card">
-            <div id="calendar-header">
-                <button id="prevMonth">◀️</button>
-                <span id="monthYear"></span>
-                <button id="nextMonth">▶️</button>
-            </div>
-
-            <div id="calendar-days"></div>
-        </div>
-    </section>
-
-    <!-- ACTIVITÉS -->
-    <section id="activities-section">
-        <h2>Activités</h2>
-
-        <div class="card">
-            <input type="date" id="activityDate">
-            <input type="text" id="activityText" placeholder="Description">
-
-            <label>
-                <input type="checkbox" id="activityReminder">
-                Activer un rappel
-            </label>
-
-            <input type="time" id="reminderTime">
-            <button id="addActivityBtn">Ajouter</button>
-        </div>
-
-        <div class="card">
-            <ul id="activitiesList"></ul>
-        </div>
-    </section>
-
-    <!-- GAINS -->
-    <section id="earnings-section">
-        <h2>Gains</h2>
-
-        <div class="card">
-            <input type="number" id="dailyRate" placeholder="Tarif journalier">
-            <p id="daysCount">Jours pointés : 0</p>
-            <p id="totalEarnings">Total : 0</p>
-        </div>
-    </section>
-
-</main>
-
-<!-- NAVIGATION BASSE -->
-<nav>
-    <button onclick="showSection('calendar-section')">📅</button>
-    <button onclick="showSection('activities-section')">📝</button>
-    <button onclick="showSection('earnings-section')">💰</button>
-</nav>
-
-<!-- JS -->
-<script src="app.js"></script>
-
-<!-- SERVICE WORKER -->
-<script>
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-<script>
-if ("serviceWorker" in navigator) {
-    
-navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-
+  <script src="app.js"></script>
 </body>
 </html>
