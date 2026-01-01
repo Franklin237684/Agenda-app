@@ -1,0 +1,122 @@
+:root {
+    --primary: #6366F1;
+    --bg: #F2F4F7;
+    --white: #FFFFFF;
+    --text: #1F2933;
+    --muted: #6B7280;
+    --danger: #DC2626;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--white);
+    padding: 16px;
+    text-align: center;
+}
+
+main {
+    padding: 16px;
+    padding-bottom: 90px;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 12px;
+}
+
+.card {
+    background: var(--white);
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+input, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.day {
+    background: #F9FAFB;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.day.marked {
+    background: #FEE2E2;
+}
+
+.cross {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    color: var(--danger);
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: var(--white);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav button {
+    background: none;
+    color: var(--text);
+    font-size: 22px;
+}
